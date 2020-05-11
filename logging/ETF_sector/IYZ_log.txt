@@ -1,0 +1,209 @@
+DEBUG: Checking if CompileToExcel(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+DEBUG: Checking if PivotTickerSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+DEBUG: Checking if PivotVolSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+DEBUG: Checking if PivotUniqueDaysSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+INFO: Informed scheduler that task   CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+DEBUG: Checking if TraceUniquePeriod(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+INFO: Informed scheduler that task   PivotUniqueDaysSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+DEBUG: Checking if ProcessTickerData(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7) is complete
+INFO: Informed scheduler that task   TraceUniquePeriod_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+DEBUG: Checking if DownloadTickerData(ticker=IYZ, ticker_freq=1mo, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver) is complete
+DEBUG: Checking if DownloadTickerData(ticker=IYZ, ticker_freq=1wk, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver) is complete
+DEBUG: Checking if DownloadTickerData(ticker=IYZ, ticker_freq=1d, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver) is complete
+INFO: Informed scheduler that task   ProcessTickerData_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0   has status   PENDING
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_1aefa50b3e   has status   PENDING
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_dc96c28678   has status   PENDING
+INFO: Informed scheduler that task   PivotVolSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+INFO: Informed scheduler that task   PivotTickerSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   PENDING
+INFO: Done scheduling tasks
+INFO: Running Worker with 6 processes
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 9
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 8
+DEBUG: Asking scheduler for work...
+INFO: [pid 80547] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   DownloadTickerData(ticker=IYZ, ticker_freq=1wk, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+DEBUG: Pending tasks: 7
+DEBUG: Asking scheduler for work...
+INFO: [pid 80548] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   DownloadTickerData(ticker=IYZ, ticker_freq=1mo, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+INFO: Running command: curl -L -o dataset/ETF_sector/IYZ/IYZ_1wk.csv https://query1.finance.yahoo.com/v7/finance/download/IYZ?period1=977932800&period2=1578067200&interval=1wk&events=history
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_1aefa50b3e is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_dc96c28678 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: Running command: curl -L -o dataset/ETF_sector/IYZ/IYZ_1mo.csv https://query1.finance.yahoo.com/v7/finance/download/IYZ?period1=975513600&period2=1577808000&interval=1mo&events=history
+INFO: [pid 80549] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   DownloadTickerData(ticker=IYZ, ticker_freq=1d, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+INFO: Running command: curl -L -o dataset/ETF_sector/IYZ/IYZ_1d.csv https://query1.finance.yahoo.com/v7/finance/download/IYZ?period1=977500800&period2=1578067200&interval=1d&events=history
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_1aefa50b3e is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_dc96c28678 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: Program stderr:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 15891    0 15891    0     0  14433      0 --:--:--  0:00:01 --:--:-- 14420100 15891    0 15891    0     0  14420      0 --:--:--  0:00:01 --:--:-- 14407
+
+INFO: [pid 80548] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      DownloadTickerData(ticker=IYZ, ticker_freq=1mo, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_dc96c28678   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_1aefa50b3e is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: Program stderr:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 43944    0 43944    0     0  37948      0 --:--:--  0:00:01 --:--:-- 37915100 68174    0 68174    0     0  52889      0 --:--:--  0:00:01 --:--:-- 52848
+
+INFO: [pid 80547] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      DownloadTickerData(ticker=IYZ, ticker_freq=1wk, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_1aefa50b3e   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: Program stderr:
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 21461    0 21461    0     0  20019      0 --:--:--  0:00:01 --:--:-- 20000100 84366    0 84366    0     0  39460      0 --:--:--  0:00:02 --:--:-- 39441100  124k    0  124k    0     0  42374      0 --:--:--  0:00:03 --:--:-- 42360100  156k    0  156k    0     0  38590      0 --:--:--  0:00:04 --:--:-- 38581100  192k    0  192k    0     0  38268      0 --:--:--  0:00:05 --:--:-- 39503100  225k    0  225k    0     0  35358      0 --:--:--  0:00:06 --:--:-- 38365100  243k    0  243k    0     0  35017      0 --:--:--  0:00:07 --:--:-- 33112100  274k    0  274k    0     0  34642      0 --:--:--  0:00:08 --:--:-- 30068100  316k    0  316k    0     0  35721      0 --:--:--  0:00:09 --:--:-- 33289100  316k    0  316k    0     0  35784      0 --:--:--  0:00:09 --:--:-- 32518
+
+INFO: [pid 80549] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      DownloadTickerData(ticker=IYZ, ticker_freq=1d, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7, driver_path=/Users/lioneltay/Google Drive/TR_research/compile_data/system/chromedriver)
+INFO: Informed scheduler that task   DownloadTickerData_dataset_ETF_sect__Users_lioneltay_2001_7075b70ab0   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 6
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: ProcessTickerData_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80558] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   ProcessTickerData(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: [pid 80558] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      ProcessTickerData(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   ProcessTickerData_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 5
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 4
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 3
+INFO: [pid 80559] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   PivotTickerSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+DEBUG: Asking scheduler for work...
+INFO: [pid 80560] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   PivotVolSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: PivotTickerSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: PivotVolSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: TraceUniquePeriod_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80561] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   TraceUniquePeriod(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+/Users/lioneltay/Applications/anaconda3/lib/python3.7/site-packages/numpy/lib/nanfunctions.py:1116: RuntimeWarning: All-NaN slice encountered
+  overwrite_input=overwrite_input)
+INFO: [pid 80559] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      PivotTickerSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   PivotTickerSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: PivotVolSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: TraceUniquePeriod_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80560] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      PivotVolSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   PivotVolSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: TraceUniquePeriod_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80561] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      TraceUniquePeriod(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   TraceUniquePeriod_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 2
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: PivotUniqueDaysSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80566] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   PivotUniqueDaysSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: PivotUniqueDaysSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: PivotUniqueDaysSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80566] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      PivotUniqueDaysSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   PivotUniqueDaysSummary_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Pending tasks: 1
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80567] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) running   CompileToExcel(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+DEBUG: CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97 is currently run by worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540)
+INFO: [pid 80567] Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) done      CompileToExcel(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+INFO: Informed scheduler that task   CompileToExcel_dataset_ETF_sect_2001_IYZ_12e9c73b97   has status   DONE
+DEBUG: Asking scheduler for work...
+DEBUG: Done
+DEBUG: There are no more tasks to run at this time
+INFO: Worker Worker(salt=022101062, workers=6, host=Tays-MBP, username=lioneltay, pid=80540) was stopped. Shutting down Keep-Alive thread
+INFO: 
+===== Luigi Execution Summary =====
+
+Scheduled 9 tasks of which:
+* 9 ran successfully:
+    - 1 CompileToExcel(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+    - 3 DownloadTickerData(...)
+    - 1 PivotTickerSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+    - 1 PivotUniqueDaysSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+    - 1 PivotVolSummary(ticker=IYZ, start_yr=2001, ETF_folder=dataset/ETF_sector, yahoo_version=v7)
+    ...
+
+This progress looks :) because there were no failed tasks or missing dependencies
+
+===== Luigi Execution Summary =====
+
