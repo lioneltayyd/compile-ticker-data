@@ -18,7 +18,7 @@ def init_preprocess(df_dict, freq_keys):
         1. Cast the column names to lowercase.
         2. Compute the price change.
         3. Extract year from the date column. 
-        4. Create additional columns: month, week, trdr_day for 
+        4. Create additional columns: month, week, trdr_day, weekday for 
            monthly, weekly, and daily data.
     
     Input  :
@@ -59,13 +59,14 @@ def init_preprocess(df_dict, freq_keys):
 def create_pivot(df_dict, pivot_dict, freq_keys, freq_cols, value):
     '''
     Purpose: 
-        Create pivot table with 'year' as columns and 'month/week/trdr_day' as index.
+        Create pivot table with 'year' as columns and 'month/week/trdr_day/weekday' 
+        as index.
     
     Input  :
         df_dict        : Dictionary. Should contain ticker dataframe.
         pivot_dict     : Dictionary. To contain the pivot tables.
         freq_keys      : List of dictionary keys. Must contain monthly/weekly/daily. 
-        freq_cols      : List. Must contain month / week / trdr_day.
+        freq_cols      : List. Must contain month / week / trdr_day / weekday.
         Value          : String. The column to perform computation on.
         
     Return :
@@ -80,10 +81,8 @@ def create_pivot(df_dict, pivot_dict, freq_keys, freq_cols, value):
     
     for col, freq in zip(freq_cols, freq_keys):    
         index = [col]
-        if col == 'trdr_day': 
-            index = ['month', col]
-        elif col == 'weekday': 
-            index = ['week', col]
+        if col == 'trdr_day': index = ['month', col]
+        elif col == 'weekday': index = ['week', col]
     
         pivot_dict[freq] = df_dict[freq].pivot_table(values=value, index=index, 
                                                      columns=column, aggfunc='mean')
@@ -92,18 +91,18 @@ def create_pivot(df_dict, pivot_dict, freq_keys, freq_cols, value):
 def summarise_pivot(pivot_dict, pivot_dict_stats, freq_keys, start_yr_range, end_yr):
     '''
     Purpose: 
-        Perform statistical computation for month/week/trdr_day. 
+        Perform statistical computation for month/week/trdr_day/weekday.
     
     Input  :
-        pivot_dict      : Dictionary. Should contain pivot tables. 
-        pivot_dict_stats: Dictionary. To contain the summarised data from pivot_dict. 
+        pivot_dict      : Dictionary. Should contain pivot tables.
+        pivot_dict_stats: Dictionary. To contain the summarised data from pivot_dict.
         freq_keys       : List of dictionary keys. Must contain monthly/weekly/daily. 
         start_yr_range  : List. Range of starting year to summarise the data on. 
         end_yr          : Int. Ending year to summarise the data on. 
 
     Return :
         None.
-
+        
     Note   :
         There are cells that contain NaN. A warning will raise if the entire cells 
         for calculating the mean or standard deviation are NaN. So far, the resulted 

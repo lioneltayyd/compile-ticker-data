@@ -16,7 +16,7 @@ workers = '6'
 # Date & Year Range.
 # ----------------------------------------------------------------------
 
-# Year range. 
+# Specify the year range to collect the data. 
 # Be careful when assigning the 'end_yr' to 'range()'. You need to add 1 to it. 
 start_yr, end_yr = (1999,2019)
 
@@ -169,10 +169,18 @@ specialDays_keys = [
     'twwQ1_weekAft', 'twwQ2_weekAft', 'twwQ3_weekAft', 'twwQ4_weekAft'
 ]
 
+# Holidays that falls on specific weekday. 
 specWeekdayHolidays = ['marLutKingJr', 'president', 'memorial', 'labour', 'columbus', 'thanksgiving']
+
+# Holidays that falls on Friday. 
 specWeekdayHolidays_backward = ['goodFriday']
+
+# Holidays that falls on specific date.
 nonSpecHolidays = ['independence', 'christmas']
+
+# Observances that falls on specific date.
 nonSpecObservances = ['valentine', 'event911', 'veteran']
+
 
 # To store pivot tables. 
 pivot_holidays = {}

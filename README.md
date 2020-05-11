@@ -5,7 +5,7 @@
 
 
   <tr>
-    <td colspan="4"><b>Project Title</b></td>
+    <td colspan="4"><b>Project (Link to Notebook Viewer)</b></td>
   </tr>
   <tr>
     <td colspan="4">
@@ -14,7 +14,6 @@
       <a href="https://nbviewer.jupyter.org/github/lionelcub/compile_ticker_data/blob/master/explore_dataframe_formatting.ipynb">Explore the data table format.</a> 
       </br>
       <a href="https://nbviewer.jupyter.org/github/lionelcub/compile_ticker_data/blob/master/explore_visualisation.ipynb">Explore plots for visualisation.</a> 
-      (Link to Notebook Viewer)
     </td>
   </tr>
 
@@ -27,27 +26,27 @@
   </tr>
   <tr>
     <td>
-      Data collecting via curl</br>
-      Data preprocessing and cleaning</br>
-      Building Luigi Pipeline</br>
-      Creating data tables and dashboard</br>
+      - Data collecting via curl</br>
+      - Data preprocessing and cleaning</br>
+      - Building Luigi pipeline</br>
+      - Creating data tables and dashboard with holoview</br>
     </td>
     <td>
-      Time Series</br>
-      Seasonal analysis</br>
+      - Time Series analysis</br>
+      - Seasonal analysis</br>
     </td>
     <td>
-      Finance</br>
-      Trading</br>
-      Investment</br>
+      - Finance</br>
+      - Trading</br>
+      - Investment</br>
     </td>
     <td>
-      pandas</br>
-      datetime</br>
-      os</br>
-      bokeh</br>
-      holoview</br>
-      Luigi</br>
+      - os</br>
+      - pandas</br>
+      - datetime</br>
+      - bokeh</br>
+      - holoview</br>
+      - luigi</br>
     </td>
   </tr>
 
