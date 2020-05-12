@@ -34,14 +34,14 @@ def formatting_dataframe(df, freq):
     
     # Apply formatting. 
     df_formatted = df_copy.style.format(formatter={
-        "avg_diff": "{:.4%}", 
-        "med_diff": "{:.4%}", 
-        "tot_diff": "{:.4%}",
-        "max_diff": "{:.4%}",
-        "min_diff": "{:.4%}",
-        "std_diff": "{:.4%}",
-        "pos_avg_diff": "{:.4%}",
-        "neg_avg_diff": "{:.4%}",
+        "avg_diff": "{:.3%}", 
+        "med_diff": "{:.3%}", 
+        "tot_diff": "{:.3%}",
+        "max_diff": "{:.3%}",
+        "min_diff": "{:.3%}",
+        "std_diff": "{:.3%}",
+        "pos_avg_diff": "{:.3%}",
+        "neg_avg_diff": "{:.3%}",
         "up_prob": "{:.2%}",
         "down_prob": "{:.2%}",})\
     .hide_index()\
