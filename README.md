@@ -1,63 +1,115 @@
-# Compile Ticker Data. 
-
-<table>
-  <tr> </tr>
+# __Compile Ticker Data__
 
 
-  <tr>
-    <td colspan="4"><b>Project (Link to Notebook Viewer)</b></td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <a href="https://nbviewer.jupyter.org/github/lionelcub/compile_ticker_data/blob/master/explore_compilation.ipynb">Explore the data compilation procedure.</a> 
-      </br>
-      <a href="https://nbviewer.jupyter.org/github/lionelcub/compile_ticker_data/blob/master/explore_dataframe_formatting.ipynb">Explore the data table format.</a> 
-      </br>
-      <a href="https://nbviewer.jupyter.org/github/lionelcub/compile_ticker_data/blob/master/explore_visualisation.ipynb">Explore plots for visualisation.</a> 
-    </td>
-  </tr>
+
+## __Project Purpose__
+
+To compile ticker data from internet resources to explore and analyse the ETF and equity trades. 
 
 
-  <tr>
-    <td><b>Process</b></td>
-    <td><b>Analysis</b></td>
-    <td><b>Field</b></td>
-    <td><b>Library</b></td>
-  </tr>
-  <tr>
-    <td>
-      - Data collecting via curl</br>
-      - Data preprocessing and cleaning</br>
-      - Building Luigi pipeline</br>
-      - Creating data tables and dashboard with holoview</br>
-    </td>
-    <td>
-      - Time Series analysis</br>
-      - Seasonal analysis</br>
-    </td>
-    <td>
-      - Finance</br>
-      - Trading</br>
-      - Investment</br>
-    </td>
-    <td>
-      - os</br>
-      - pandas</br>
-      - datetime</br>
-      - bokeh</br>
-      - holoview</br>
-      - luigi</br>
-    </td>
-  </tr>
+
+## __Main Tools__
+
+Tools | Description
+:--- | :---
+[luigi][luigi_docs_url] | For building data pipeline and dashboard. 
+[pandas][pandas_docs_url] | For data processing. 
+[pipenv][pipenv_docs_url] | For managing dependencies. 
 
 
-  <tr>
-    <td colspan="4"><b>Description</b></td>
-  </tr>
-  <tr>
-    <td colspan="4">
-      <p></p>
-      <p>Automate the process of data collecting, preprocessing, and dashboard update for market analysis with Luigi pipeline tool.</p>
-    </td>
-  </tr>
-</table>
+
+## __Data Architecture Overview__
+
+This project focuses on the __Streamlit Dashboard__ section. It's associated with [Market Trades Dashboard Repo][market_trades_dashboard_repo] 
+(Streamlit Dashboard section). 
+
+![Project Architecture Diagram][architecture_overview_img] 
+
+
+
+## __Folder Structure__
+
+File / Folder Name | Description
+:--- | :---
+autovisualise_data | For keeping custom python modules related to data visualisation. 
+config | For configuration. It encompasses 3 files. `config_logger` is for logger, `config_dashboard` for dashboard, `config_naming` for namings, `config` for other general configuration. 
+docs | For storing files, data, and documents. 
+logs | For storing the log info. 
+sh | For running bash script on Mac. 
+pipfile | For setting up the virtual environment and tracking all the installed dependencies. 
+
+
+
+## __Project Setup__
+
+1.  Pull the project from the repo. 
+
+1.  Install `pyenv` to manage the python version (if needed) and `pipenv` for dependencies. 
+
+1.  Run this to install dependencies from the `Pipfile.lock` file. 
+    
+    ```bash
+    pipenv shell;
+    pipenv sync; 
+    ```
+
+1.  To reinstall the entire dependencies, update the version within the `Pipfile` file if needed, then run this. This will 
+    automatically create / update the `Pipfile.lock` file for you. 
+
+    ```bash
+    pipenv install;
+    ```
+
+1.  Try import specific library and check the version to see if it's installed. 
+
+
+
+## __Code Running Guide__
+
+1.  Run the streamlit dashboard app locally. 
+
+    ```bash
+    streamlit run run_streamlit.py
+    ```
+
+1.  Run the docker compose to start the app locally. 
+
+    ```bash
+    sh sh/run_docker_compose.sh up
+    ```
+
+    To stop the app from running, do this. 
+
+    ```bash
+    sh sh/run_docker_compose.sh down 
+    ```
+
+
+
+## __Deployment Guide__
+
+Updating soon... 
+
+
+
+## __Debugging & Testing__ 
+
+1.  To debug specific functions or code, use [Jupytext Percent Format][jupytext_percent_docs_url]. 
+    Simple include the following at the bottom of the `run_pipeline.py` file and write your code 
+    to test specific function(s). This relies on `ipykernel` module so ensure that it is installed 
+    via `pipenv`. 
+
+    ![Jupytext Percent Example][jupytext_percent_img]
+
+
+
+[architecture_overview_img]: ./docs/images/architecture_overview.jpg 
+[config_debug_img]: ./docs/images/config_debug_example.png
+[jupytext_percent_img]: ./docs/images/jupytext_percent_example.png
+
+[market_trades_dashboard_repo]: https://github.com/lioneltayyd/market-trades-dashboard
+
+[luigi_docs_url]: https://luigi.readthedocs.io/en/stable/
+[pandas_docs_url]: https://pandas.pydata.org/docs/user_guide/index.html
+[pipenv_docs_url]: https://pipenv-fork.readthedocs.io/en/latest/
+[jupytext_percent_docs_url]: https://jupytext.readthedocs.io/en/latest/formats.html#the-percent-format

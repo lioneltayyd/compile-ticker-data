@@ -80,8 +80,8 @@ LOG_PIPELINE_SECTOR_DIR = f'logs/pipeline/ETF_sector'
 LOG_PIPELINE_EQUITY_DIR = f'logs/pipeline/ETF_equity'
 
 # Directory for storing the ETF data. 
-ETF_SECTOR_DIR = f'dataset/ETF_sector'
-ETF_EQUITY_DIR = f'dataset/ETF_equity' 
+ETF_SECTOR_DIR = f'docs/dataset/ETF_sector'
+ETF_EQUITY_DIR = f'docs/dataset/ETF_equity' 
 
 # Others.  
 PROJECT_PATH = os.getcwd()
@@ -89,7 +89,7 @@ DRIVER_PATH = os.path.join(PROJECT_PATH, 'system/chromedriver')
 
 
 # ----------------------------------------------------------------------
-# For Ticker Data Preprocessing.
+# For Selenium Scraper.
 # ----------------------------------------------------------------------
 
 SLEEP = 5
