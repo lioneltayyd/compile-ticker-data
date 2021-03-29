@@ -1,44 +1,57 @@
 
 
-# Python modules.
+import logging
 import regex as re
-import pandas as pd
+# Personal modules. 
+from config.config_logger import setup_logger
+from config.config import LOG_PROCESSING_FILEPATH
 
+
+# --------------------------------------------------------------
+# Logger setup. 
+# --------------------------------------------------------------
+
+logger = logging.getLogger(__name__)
+logger, file_handler, stream_handler = setup_logger(logger, LOG_PROCESSING_FILEPATH) 
 
 # ----------------------------------------------------------------------
 # Write into Excel file.  
 # ----------------------------------------------------------------------
 
-def singleSheetMultiWrite(excelWriter, pivot_dict, pivot_stats, sheetName, keys, 
-                          startcol, startrow, distance):
+def single_sheet_multi_write(excel_writer, pivot_dict, pivot_stats, sheet_name, keys, 
+                             startcol, startrow, distance):
     
     startrow1st = startrow
     
     for i, key in enumerate(keys):
-        pivot_dict[key].to_excel(excelWriter, sheet_name=sheetName, startcol=startcol, startrow=startrow1st)
+        logger.info(f'Saving {key} ticker data...')
+
+        pivot_dict[key].to_excel(excel_writer, index=False, sheet_name=sheet_name, startcol=startcol, startrow=startrow1st)
         startcol2nd = startcol + len(pivot_dict[key].columns) + distance
         
         re_compile = re.compile(f'(?:{key})(?:_R.*Yr)?(?!_)')
         stats_keys = list(filter(re_compile.match, pivot_stats.keys()))
         
         for stats_key in stats_keys:
-            pivot_stats[stats_key].to_excel(excelWriter, sheet_name=sheetName, 
+            pivot_stats[stats_key].to_excel(excel_writer, index=False, sheet_name=sheet_name, 
                                             startcol=startcol2nd, startrow=startrow1st)
             startcol2nd = startcol2nd + len(pivot_stats[stats_key].columns) + distance
         
         startrow1st = startrow1st + len(pivot_dict[key].index) + distance 
 
         
-def multiSheetWrite(excelWriter, pivot_dict, pivot_stats, sheetName, key, 
-                    startcol, startrow, distance):    
+def multi_sheet_write(excel_writer, pivot_dict, pivot_stats, sheet_name, key, 
+                      startcol, startrow, distance):  
 
-    pivot_dict[key].to_excel(excelWriter, sheet_name=sheetName, startcol=startcol, startrow=startrow)
+    logger.info(f'Saving {key} ticker data...') 
+
+    pivot_dict[key].to_excel(excel_writer, index=False, sheet_name=sheet_name, startcol=startcol, startrow=startrow)
     startcol2nd = startcol + len(pivot_dict[key].columns) + distance
 
     re_compile = re.compile(f'(?:{key})(?:_R.*Yr)?(?!_)')
     stats_keys = list(filter(re_compile.match, pivot_stats.keys()))
     
     for stats_key in stats_keys:
-        pivot_stats[stats_key].to_excel(excelWriter, sheet_name=sheetName, 
+        pivot_stats[stats_key].to_excel(excel_writer, index=False, sheet_name=sheet_name, 
                                         startcol=startcol2nd, startrow=startrow) 
         startcol2nd = startcol2nd + len(pivot_stats[stats_key].columns) + distance
